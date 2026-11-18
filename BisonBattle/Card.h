@@ -7,20 +7,21 @@
 #include <string>
 #include <iostream>
 
-// #includes go here!!
+class card
+{
+private:
+    std::string cardName;
+    int cardType;
+    int energyCost;
 
+public:
+    card(std::string name, int type, int energy);
 
-// class goes here!!
+    std::string getCardName() const;
+    int getCardType() const; //Will return 1(attack), 2(defend), or 3(heal)
+    int getEnergyCost() const;
 
-
-/**
- * 
- 
- class Combat; 
- Card base class 
- operator<< for printing a card
- 3 player cards: AttackCard, ShieldCard, HealCard
- 3 boss cards: BossAttackCard, EnergyDrainCard, PopQuizCard
- */
+    bool playCard(int& currentEnergy);
+};
 
 #endif
